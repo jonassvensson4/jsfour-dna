@@ -5,8 +5,6 @@ Ett script som låter dig ta DNA från alla spelare samt brottsplatser (döda sp
 Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vidare scriptet eller ladda upp det på nytt, hänvisa folket hit istället.
 
 ### INFO
-För att scriptet ska fungera så behöver du använda dig av ESX.
-
 * Man tar DNAt genom att gå fram till personen och klickar fram menyn (se längre ner)
   - Från en levande spelare räknas DNAt som ett prov, från en död spelare räknas det som en brottsplats
 * Du kan endast ha 1 DNA på dig, detta laddas upp nere datorn vid cellerna på polishuset
@@ -16,6 +14,8 @@ För att scriptet ska fungera så behöver du använda dig av ESX.
 
 ### INSTALLERING
 För att detta ska fungera behöver du göra följande:
+
+För att scriptet ska fungera så behöver du använda dig av ESX.
 
 1. Lägg in scriptet i din resource-mapp och lägg sedan till den i din server.cfg så den startas
 2. Lägg in tabellen i databasen (jsfour_dna.sql)
