@@ -1,4 +1,6 @@
-CREATE TABLE `jsfour_dna` (
+USE `essentialmode`;
+
+CREATE TABLE `jsfour_dnaTEMP` (
   `pk` varchar(255) COLLATE utf8mb4_bin NOT NULL,
   `killer` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
   `dead` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
