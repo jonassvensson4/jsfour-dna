@@ -1,3 +1,5 @@
+EJ KLART, UNDER UTVECKLING
+
 # jsfour-dna
 Ett script som låter dig ta DNA från alla spelare samt brottsplatser (döda spelare).
 
