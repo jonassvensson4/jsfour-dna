@@ -90,7 +90,7 @@ end)
 
 -- Grab DNA from a player
 RegisterNetEvent('jsfour-dna:get')
-AddEventHandler('jsfour-dna:get', function( player )
+AddEventHandler('jsfour-dna:get', function(player)
 	if dna.p == nil then
 		local ped = GetPlayerPed(player)
 
@@ -107,16 +107,16 @@ AddEventHandler('jsfour-dna:get', function( player )
 					weapon = v.text
 				end
 			end
-
 			Citizen.Wait(1000)
-
 			if weapon ~= nil then
-				dna = {k = killerid, d = deadname, w = weapon, p = GetPlayerServerId(player)}
+				dna = {k = killername, d = deadname, w = weapon, p = killerid}
+				ESX.ShowNotification('Tog DNA-prov från en brottsplats..')
 			else
 				ESX.ShowNotification('Hittade inget spår av DNA..')
 			end
 		else
 			dna = {k = nil, d = nil, w = nil, p = GetPlayerServerId(player)}
+			ESX.ShowNotification('Tog DNA-prov från en person..')
 		end
 	else
 		ESX.ShowNotification('Du har redan ett DNA på dig, lämna in det först.')
