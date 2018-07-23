@@ -132,19 +132,25 @@ AddEventHandler('jsfour-dna:save', function( dna )
       local name = result[1].firstname .. ' ' .. result[1].lastname
 
       if dna.k ~= nil then -- Spara DNA från död spelare
-        MySQL.Async.execute('INSERT INTO jsfour_dna (pk, killer, dead, weapon, type, lastdigits, datum, uploader) VALUES (@pk, @killer, @dead, @weapon, @type, @lastdigits, @datum, @uploader)',
-          {
-            ['@pk']       = pk,
-            ['@killer']   = name,
-            ['@dead']     = dna.d,
-            ['@weapon']   = dna.w,
-            ['@type']     = 'murder',
-            ['@lastdigits'] = lastdigits,
-            ['@datum'] = datum,
-            ['@uploader'] = uploader
-          }
-        )
-        TriggerClientEvent('jsfour-dna:callback', _source, 'callback', 'upload-success', 'murder', pk)
+        local identifier = ESX.GetPlayerFromId(dna.d).identifier
+        MySQL.Async.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier', {['@identifier'] = identifier},
+        function (result)
+          local deadname = result[1].firstname .. ' ' .. result[1].lastname
+
+          MySQL.Async.execute('INSERT INTO jsfour_dna (pk, killer, dead, weapon, type, lastdigits, datum, uploader) VALUES (@pk, @killer, @dead, @weapon, @type, @lastdigits, @datum, @uploader)',
+            {
+              ['@pk']       = pk,
+              ['@killer']   = name,
+              ['@dead']     = deadname,
+              ['@weapon']   = dna.w,
+              ['@type']     = 'murder',
+              ['@lastdigits'] = lastdigits,
+              ['@datum'] = datum,
+              ['@uploader'] = uploader
+            }
+          )
+          TriggerClientEvent('jsfour-dna:callback', _source, 'callback', 'upload-success', 'murder', pk)
+        end)
       else -- Spara DNA från levande spelare
         MySQL.Async.fetchAll('SELECT killer FROM jsfour_dna WHERE killer = @killer AND type = @type', {['@killer'] = name, ['@type'] = 'prov'},
           function (result)
