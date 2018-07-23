@@ -9,7 +9,7 @@ Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vid
 ### INFO
 * Man tar DNAt genom att gå fram till personen och klickar fram menyn (se längre ner)
   - Från en levande spelare räknas DNAt som ett prov, från en död spelare räknas det som en brottsplats
-* Du kan endast ha 1 DNA på dig, detta laddas upp nere datorn vid cellerna på polishuset
+* Du kan endast ha 1 DNA på dig, detta laddas upp nere vid datorn vid cellerna på polishuset
 * Man kan ta bort DNA som finns i databasen, då krävs ett lösenord. Lösenordet är hårdkodat och är jsfour by default. Detta kan ändras i init.js på rad 136
 * För kunna ta ett DNA från en död spelare så krävs det att spelare dött av ett melee-vapen. En kniv exempelvis. Det är väldigt ologiskt att man kan få fram DNA från en kula. Men är detta något du vill lägga till så kan du göra det i tablen weapons i client.lua
 * För att matchningsresultatet ska bli positivt så krävs det att du har DNAt från spelaren i databasen
