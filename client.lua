@@ -155,7 +155,7 @@ AddEventHandler('jsfour-dna:callback', function(_type, data, _type1, val)
 end)
 
 -- Javascript callbacks
---dna = {k = 'Bosse', d = 'Kurt', w = 'weapon', p = 1}
+--dna = {k = 1, d = 'Kurt', w = 'weapon', p = 1}
 --dna = {k = nil, d = nil, w = nil, p = 1}
 -- Upload DNA
 RegisterNUICallback('upload', function(data, cb)
