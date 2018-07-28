@@ -14,7 +14,7 @@ Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vid
 * För kunna ta ett DNA från en död spelare så krävs det att spelare dött av ett melee-vapen. En kniv exempelvis. Det är väldigt ologiskt att man kan få fram DNA från en kula. Men är detta något du vill lägga till så kan du göra det i tablen weapons i client.lua
 * För att matchningsresultatet ska bli positivt så krävs det att du har DNAt från spelaren i databasen
 
-### INSTALLERING
+### INSTALLATION
 För att detta ska fungera behöver du göra följande:
 
 För att scriptet ska fungera så behöver du använda dig av ESX.
