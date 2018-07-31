@@ -21,7 +21,7 @@ För att scriptet ska fungera så behöver du använda dig av ESX.
 
 1. Lägg in scriptet i din resource-mapp och lägg sedan till den i din server.cfg så den startas
 2. Lägg in tabellen i databasen (jsfour_dna.sql)
-3. Detta är kod-bitar som ska in i en meny: 
+3. Detta är kod-bitar som ska in i en meny, det kan variera beroende på hur din meny ser ut: 
 
 ```
 {label = 'DNA', value = 'dna'}
