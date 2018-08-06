@@ -21,7 +21,7 @@ För att scriptet ska fungera så behöver du använda dig av ESX.
 
 1. Lägg in scriptet i din resource-mapp och lägg sedan till den i din server.cfg så den startas
 2. Lägg in tabellen i databasen (jsfour_dna.sql)
-3. Scriptet är uppbyggt på att det finns lastdigits i din databas. Det är 4 siffror som är unika för varje spelare. Detta är något du måste lägga till. Antingen via ett script som det åt dig eller så får du göra det manuellt för varje spelare. Mitt <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> gör detta vid registrering.
+3. Scriptet är uppbyggt på att det finns lastdigits i din databas. Det är 4 siffror som är unika för varje spelare. Detta är något du måste lägga till. Antingen via ett script som gör det åt dig eller så får du göra det manuellt för varje spelare. Mitt <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> gör detta vid registrering.
 4. Detta är kod-bitar som ska in i en meny, det kan variera beroende på hur din meny ser ut: 
 
 ```
