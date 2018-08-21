@@ -162,14 +162,14 @@ RegisterNUICallback('upload', function(data, cb)
 	if dna.p ~= nil then
 		TriggerServerEvent('jsfour-dna:save', dna)
 		dna = {}
+		cb('ok')
 	else
 		SendNUIMessage({
 			action = "callback",
 			array = 'upload-fail'
 		})
+		cb('error')
 	end
-
-	cb('ok')
 end)
 
 -- Fetch DNA
