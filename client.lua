@@ -112,16 +112,16 @@ AddEventHandler('jsfour-dna:get', function( player )
 
 			if weapon ~= nil then
 				dna = {k = killername, d = GetPlayerServerId(player), w = weapon, p = killerid}
-				ESX.ShowNotification('Tog DNA-prov från en brottsplats..')
+				ESX.ShowNotification('Grabbed DNA from the dead body..')
 			else
-				ESX.ShowNotification('Hittade inget spår av DNA..')
+				ESX.ShowNotification("Couldn't find any DNA..")
 			end
 		else
 			dna = {k = nil, d = nil, w = nil, p = GetPlayerServerId(player)}
-			ESX.ShowNotification('Tog DNA-prov från en person..')
+			ESX.ShowNotification('Grabbed DNA from the person..')
 		end
 	else
-		ESX.ShowNotification('Du har redan ett DNA på dig, lämna in det först..')
+		ESX.ShowNotification('You already have a DNA sample on you, please upload it..')
 	end
 end)
 
