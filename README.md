@@ -4,15 +4,6 @@ A script that lets you grab DNA samples from players and crime scenes (dead play
 ### LICENSE
 Please don't sell or reupload this resource
 
-### USAGE
-* Grab a DNA by using the example below. 
-  - If you grab a DNA sample from a player that's alive it counts as a "person" if you grab it from a dead player it counts as a "crime scene"
-
-* You can only have 1 DNA on you at a time. So you need to upload it at the computer at the police station (down the stairs) Or use my <a href="https://github.com/jonassvensson4/jsfour-mdc">jsfour-mdc</a>
-* You can remove a DNA that's in the database, you'll need a password. The password is jsfour by default. This could be changed in init.js on row 136
-* To be able to grab a DNA from a dead player the player needs to have been killed by a melee weapon, a knife and so on. It wouldn't be that realistic if you could grab a DNA if the player had been killed by a gun. If you wan't to add more weapons you could do so by adding them in the weapons table in client.lua
-* For a successful match you need to have the persons DNA in the database
-
 ### INSTALLATION
 You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> installed.
 
@@ -31,6 +22,15 @@ You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> instal
   -- There's also a remove event which could be added to a menu or something..
   TriggerEvent('jsfour-dna:remove')
 ```
+
+### USAGE
+* Grab a DNA by using the example below. 
+  - If you grab a DNA sample from a player that's alive it counts as a "person" if you grab it from a dead player it counts as a "crime scene"
+
+* You can only have 1 DNA on you at a time. So you need to upload it at the computer at the police station (down the stairs) Or use my <a href="https://github.com/jonassvensson4/jsfour-mdc">jsfour-mdc</a>
+* You can remove a DNA that's in the database, you'll need a password. The password is jsfour by default. This could be changed in init.js on row 136
+* To be able to grab a DNA from a dead player the player needs to have been killed by a melee weapon, a knife and so on. It wouldn't be that realistic if you could grab a DNA if the player had been killed by a gun. If you wan't to add more weapons you could do so by adding them in the weapons table in client.lua
+* For a successful match you need to have the persons DNA in the database
 
 ### SCREENSHOTS
 ![screenshot](https://i.gyazo.com/0e38567915f677da7746ff263a8c74ba.png)
