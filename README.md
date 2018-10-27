@@ -4,7 +4,7 @@ A script that lets you grab DNA samples from players and crime scenes (dead play
 ### LICENSE
 Please don't sell or reupload this resource
 
-### INFO
+### USAGE
 * Grab a DNA by using the example below. 
   - If you grab a DNA sample from a player that's alive it counts as a "person" if you grab it from a dead player it counts as a "crime scene"
 
