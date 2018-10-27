@@ -1,8 +1,8 @@
 # jsfour-dna
-Ett script som låter dig ta DNA från alla spelare samt brottsplatser (döda spelare).
+A script that lets you grab DNA samples from players and crime scenes (dead players).
 
 ### LICENSE
-Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vidare scriptet eller ladda upp det på nytt, hänvisa folket hit istället.
+Please don't sell or reupload this resource
 
 ### INFO
 * Man tar DNAt genom att gå fram till personen och klickar fram menyn (se längre ner)
@@ -13,14 +13,14 @@ Du får mer än gärna ändra vad du vill i scriptet men du får INTE sälja vid
 * För att matchningsresultatet ska bli positivt så krävs det att du har DNAt från spelaren i databasen
 
 ### INSTALLATION
-För att detta ska fungera behöver du göra följande:
+You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> installed.
 
-För att scriptet ska fungera så behöver du använda dig av ESX.
+* Rename the folder to **jsfour-dna**
+* Run the SQL file
 
-1. Lägg in scriptet i din resource-mapp och lägg sedan till den i din server.cfg så den startas
-2. Lägg in tabellen i databasen (jsfour_dna.sql)
-3. Scriptet är uppbyggt på att det finns lastdigits i din databas. Det är 4 siffror som är unika för varje spelare. Detta är något du måste lägga till. Antingen via ett script som gör det åt dig eller så får du göra det manuellt för varje spelare. Mitt <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> gör detta vid registrering.
-4. Detta är kod-bitar som ska in i en meny, det kan variera beroende på hur din meny ser ut: 
+* To be able to use this script you need to have "lastdigits" in your database. This is something that is used by my other scritps and that's why I've used it here as well. If you don't want it you have to rewrite some of the functions in server.lua. You could use my <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> instead of the regular esx_identity to generate lastdigits for every player.
+
+* Add a way to trigger the events, this is a menu for example:
 
 ```
 {label = 'DNA', value = 'dna'}
@@ -33,7 +33,7 @@ if data.current.value == 'dna' then
   end
 end
 
--- Finns även ett event för att ta bort DNAt du har på dig. Även detta rekommenderas att ha i en meny
+-- There's also a remove event which could be added to a menu or something..
 TriggerEvent('jsfour-dna:remove')
 ```
 
