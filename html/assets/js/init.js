@@ -6,58 +6,58 @@ $(document).ready(function(){
         $('#wrapper').hide();
       } else if (event.data.action == 'callback') {
         if (event.data.array == 'upload-fail') {
-          $('#upload h1').text('Du har inget DNA på dig..');
+          $('#upload h1').text('You have no DNA..');
           $('.progress').hide();
         } else if (event.data.array == 'upload-success') {
           var txt;
           if (event.data.atype == 'murder') {
-            txt = 'Laddat upp ett DNA med ID: ' + event.data.value;
+            txt = 'You have uploaded the DNA with ID: ' + event.data.value;
           } else {
-            txt = 'Laddat upp ett DNA för ' + event.data.value;
+            txt = 'You have uploaded the DNA for ' + event.data.value;
           }
 		  setTimeout(function(){
-			  $('#upload h1').text('Klart!');
+			  $('#upload h1').text('Done!');
 			  $('.progress').hide();
 			  $('.upload-success').text(txt);
 		   }, 3000);
         } else if (event.data.array == 'upload-failed') {
           setTimeout(function(){
-            $('#upload h1').text('Personen finns redan registrerad..');
+            $('#upload h1').text('The person is already in our system..');
             $('.progress').hide();
           }, 3000);
         } else if (event.data.array == 'match-fail') {
           $('#match-message').css('background', '#ae0e00');
-          $('#match-message').text('Ingen match..').slideDown().show();
+          $('#match-message').text('No match..').slideDown().show();
           setTimeout(function(){
             $('#match-message').slideUp();
           }, 3000);
         } else if (event.data.array == 'match-exists') {
           $('#match-message').css('background', '#ae0e00');
-          $('#match-message').text('Det finns redan en matchning..').slideDown().show();
+          $('#match-message').text("There's already a match..").slideDown().show();
           setTimeout(function(){
             $('#match-message').slideUp();
           }, 3000);
         } else if (event.data.array == 'match-success') {
           $('#match-message').css('background', '#00ae22');
-          $('#match-message').text('Vi har en match! Skickar labbrapport..').slideDown().show();
+          $('#match-message').text('We have a match! Sending lab report..').slideDown().show();
           setTimeout(function(){
             $('#match-message').slideUp();
           }, 3000);
         } else if (event.data.array == 'search-fail') {
           $('#match-message').css('background', '#ae0e00');
-          $('#match-message').text('Hittade inte ID i databasen').slideDown().show();
+          $('#match-message').text("Couldn't find the ID in the database").slideDown().show();
           setTimeout(function(){
             $('#match-message').slideUp();
           }, 3000);
         } else if (event.data.array == 'remove-success') {
           $('#remove-message').css('background', '#00ae22');
-          $('#remove-message').text('DNA borttaget!').slideDown().show();
+          $('#remove-message').text('DNA removed!').slideDown().show();
           setTimeout(function(){
             $('#remove-message').slideUp();
           }, 3000);
         } else if (event.data.array == 'remove-fail') {
           $('#remove-message').css('background', '#ae0e00');
-          $('#remove-message').text('Hittade inget DNA..').slideDown().show();
+          $('#remove-message').text("Couldn't find the DNA..").slideDown().show();
           setTimeout(function(){
             $('#remove-message').slideUp();
           }, 3000);
@@ -65,34 +65,34 @@ $(document).ready(function(){
       } else if (event.data.action == 'murder') {
         if (event.data.array.pk != 'tomt') {
           for (var i = 0; i < event.data.array.length; i++) {
-            $('#brottsplatser ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].pk+'</p><p>Uppladdat av:</p><p>'+event.data.array[i].uploader+'</p><p>'+event.data.array[i].datum+'</p></li>');
+            $('#brottsplatser ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].pk+'</p><p>Uploaded by:</p><p>'+event.data.array[i].uploader+'</p><p>'+event.data.array[i].datum+'</p></li>');
           }
         } else {
-          $('#database h1').text('Hittade inget..');
+          $('#database h1').text('No results..');
         }
       } else if (event.data.action == 'prov') {
         if (event.data.array.pk != 'tomt') {
           for (var i = 0; i < event.data.array.length; i++) {
-            $('#personer ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].killer+'</p><p>Uppladdat av:</p><p>'+event.data.array[i].uploader+'</p><p>'+event.data.array[i].datum+'</p></li>');
+            $('#personer ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].killer+'</p><p>Uploaded by:</p><p>'+event.data.array[i].uploader+'</p><p>'+event.data.array[i].datum+'</p></li>');
           }
         } else {
-          $('#database h1').text('Hittade inget..');
+          $('#database h1').text('No results..');
         }
       } else if (event.data.action == 'match') {
         if (event.data.array.pk != 'tomt') {
           for (var i = 0; i < event.data.array.length; i++) {
-            $('#lab ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].pk+'</p><p>Hittade spår av DNA från</p><p>'+event.data.array[i].killer+'</p></li>');
+            $('#lab ul').append('<li><img src="assets/images/dna.png"/><p class="id">'+event.data.array[i].pk+'</p><p>Found traces of DNA from</p><p>'+event.data.array[i].killer+'</p></li>');
           }
-          $('#lab h1').text('Labbrapporter');
+          $('#lab h1').text('Lab reports');
         } else {
-          $('#lab h1').text('Hittade inget..');
+          $('#lab h1').text('No results..');
         }
       }
   });
 
 function resetAll() {
   $('#database h1').text('Database');
-  $('#upload h1').text('Laddar upp..');
+  $('#upload h1').text('Uploading..');
   $('.upload-success').text('');
   $('.progress').show();
   $('#upload').hide();
@@ -147,7 +147,7 @@ $('.btn-back').click(function(){
       }
     } else {
       $('#remove-message').css('background', '#ae0e00');
-      $('#remove-message').text('Fel lösenord').slideDown().show();
+      $('#remove-message').text('Wrong password').slideDown().show();
       setTimeout(function(){
         $('#remove-message').slideUp();
       }, 3000);
@@ -170,7 +170,7 @@ $('.btn-back').click(function(){
   $('#btn-brottsplatser').click(function() {
     $('#home').hide();
     $.post('http://jsfour-dna/fetch', JSON.stringify({type: "murder"}));
-    $('#database h1').text('Database - Brottsplatser');
+    $('#database h1').text('Database - Crime scenes');
     $('#database').show();
     $('#brottsplatser').show();
   });
@@ -178,7 +178,7 @@ $('.btn-back').click(function(){
   $('#btn-personer').click(function() {
     $('#home').hide();
     $.post('http://jsfour-dna/fetch', JSON.stringify({type: "prov"}));
-    $('#database h1').text('Database - Personer');
+    $('#database h1').text('Database - Persons');
     $('#database').show();
     $('#personer').show();
   });
