@@ -5,12 +5,13 @@ A script that lets you grab DNA samples from players and crime scenes (dead play
 Please don't sell or reupload this resource
 
 ### INFO
-* Man tar DNAt genom att gå fram till personen och klickar fram menyn (se längre ner)
-  - Från en levande spelare räknas DNAt som ett prov, från en död spelare räknas det som en brottsplats
-* Du kan endast ha 1 DNA på dig, detta laddas upp nere vid datorn vid cellerna på polishuset
-* Man kan ta bort DNA som finns i databasen, då krävs ett lösenord. Lösenordet är hårdkodat och är jsfour by default. Detta kan ändras i init.js på rad 136
-* För kunna ta ett DNA från en död spelare så krävs det att spelare dött av ett melee-vapen. En kniv exempelvis. Det är väldigt ologiskt att man kan få fram DNA från en kula. Men är detta något du vill lägga till så kan du göra det i tablen weapons i client.lua
-* För att matchningsresultatet ska bli positivt så krävs det att du har DNAt från spelaren i databasen
+* Grab a DNA by using the example below. 
+  - If you grab a DNA sample from a player that's alive it counts as a "person" if you grab it from a dead player it counts as a "crime scene"
+
+* You can only have 1 DNA on you at a time. So you need to upload it at the computer at the police station (down the stairs) Or use my <a href="https://github.com/jonassvensson4/jsfour-mdc">jsfour-mdc</a>
+* You can remove a DNA that's in the database, you'll need a password. The password is jsfour by default. This could be changed in init.js on row 136
+* To be able to grab a DNA from a dead player the player needs to have been killed by a melee weapon, a knife and so on. It wouldn't be that realistic if you could grab a DNA if the player had been killed by a gun. If you wan't to add more weapons you could do so by adding them in the weapons table in client.lua
+* For a successful match you need to have the persons DNA in the database
 
 ### INSTALLATION
 You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> installed.
@@ -20,21 +21,17 @@ You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> instal
 
 * To be able to use this script you need to have "lastdigits" in your database. This is something that is used by my other scritps and that's why I've used it here as well. If you don't want it you have to rewrite some of the functions in server.lua. You could use my <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> instead of the regular esx_identity to generate lastdigits for every player.
 
-* Add a way to trigger the events, this is a menu for example:
+* Add a way to trigger this event:
 
 ```
-{label = 'DNA', value = 'dna'}
-
-if data.current.value == 'dna' then
   local player, distance = ESX.Game.GetClosestPlayer()
   
   if distance ~= -1 and distance <= 3.0 then
     TriggerEvent('jsfour-dna:get', player)
   end
-end
 
--- There's also a remove event which could be added to a menu or something..
-TriggerEvent('jsfour-dna:remove')
+  -- There's also a remove event which could be added to a menu or something..
+  TriggerEvent('jsfour-dna:remove')
 ```
 
 ### SCREENSHOTS
