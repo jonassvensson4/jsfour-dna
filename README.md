@@ -10,7 +10,7 @@ You need to have <a href="https://github.com/ESX-Org/es_extended">ESX</a> instal
 * Rename the folder to **jsfour-dna**
 * Run the SQL file
 * To be able to use this script you need to have "lastdigits" in your database. This is something that is used by my other scritps and that's why I've used it here as well. If you don't want it you have to rewrite some of the functions in server.lua. You could use my <a href="https://github.com/jonassvensson4/jsfour-register">jsfour-register<a/> instead of the regular esx_identity to generate lastdigits for every player.
-* Add a way to trigger this event:
+* Grab the DNA by using this code, you need to add it to a menu or something:
 
 ```
   local player, distance = ESX.Game.GetClosestPlayer()
