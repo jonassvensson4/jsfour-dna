@@ -39,8 +39,9 @@ AddEventHandler('jsfour-dna:match', function( pk )
       local datum = os.date("%Y-%m-%d")
       MySQL.Async.fetchAll('SELECT killer, lastdigits FROM jsfour_dna WHERE killer = @killer AND type = @type', {['@killer'] = killer, ['@type'] = 'prov'},
       function (result)
-        local lastdigits = result[1].lastdigits
         if (result[1] ~= nil) then
+          local lastdigits = result[1].lastdigits
+                
           MySQL.Async.fetchAll('SELECT pk FROM jsfour_dna WHERE killer = @killer AND type = @type', {['@killer'] = killer, ['@type'] = 'match'},
           function (result)
             if (result[1] == nil) then
